@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="css/style.css" rel="stylesheet">
+<script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
+
+<head>
+    <header><a href="medicamentos">Home</a><a href="login">Login</a><a href="usuarios">Cadastro</a></header>
+    <title>Login</title>
+    <meta charset="utf-8">
+
+    <img src="https://i.ibb.co/YywLC81/msd-1.png" height=130px width=130px></img>
+    <h1>My Simple Doctor</h1>
+    <p>Bem-vindo ao My Simple Doctor!
+        <br>Aqui você pode inserir seus sintomas e encontrar medicamentos que podem ser sua solução!</p>
+
+</head>
+
+<body>
+    <aside>
+        <div>
+            <h2>Menu</h2>
+            <a href="medicamentos">Fitoterápicos</a><br>
+            <a href="medicamentos">Homeopáticos</a><br>
+            <a href="farmacias">Farmácias</a><br>
+            <a href="#">Médicos</a>
+        </div>
+    </aside>
+    <article>
+        <form class="login">
+            <div class="imgcontainer">
+                <img src="https://i.ibb.co/Msh3bXY/User.png" alt="User" class="avatar"></img>
+            </div><br>
+            <div class="container">
+                <label for="username"><b>Usuário</b></label><br>
+                <input type="text" placeholder="Insira o usuário" id="uname" required><br>
+
+                <label for="password"><b>Senha</b></label><br>
+                <input type="password" placeholder="Insira a senha" id="pwd" required><br>
+
+                <button id="login" type="button" class="submit" href="javascript:void(0)" onclick="Login()">Login</button>
+            </div><br>
+            <div class="container">
+                <button type="button" class="cancelbtn">Cancelar</button>
+            </div><br>
+            <div>
+                <p>Ainda não tem cadastro? Clique <a href="usuarios">aqui</a>!</p>
+            </div>
+
+        </form>
+    </article>
+    <footer>
+
+        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com as avaliações, porém não substitui a opinião médica.
+        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico. Desenvolvedores do site: Emanuela Lopez e Joel Ribeiro
+    </footer>
+
+
+</body>
+
+
+
+</html>

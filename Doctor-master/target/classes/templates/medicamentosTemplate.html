@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="/css/style.css" rel="stylesheet">
+<script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
+
+<head>
+    <header><a href="medicamentos">Home</a><a href="login">Login</a><a href="usuarios">Cadastro</a></header>
+    <title>My Simple Doctor</title>
+    <meta charset="utf-8">
+
+    <img class="logo" src="https://i.ibb.co/YywLC81/msd-1.png" height=130px width=130px></img>
+    <h1>My Simple Doctor</h1>
+    <br>
+    <br>
+    <div>
+        <form id="divBusca">
+            <input type="text" id="indicacao" placeholder="Insira seus sintomas aqui" />
+            <button  href="javascript:void(0)" onclick="Buscar()" type="submit" id="btnBusca">Buscar</button>
+        </form>
+    </div>
+
+</head>
+
+<body>
+    <div class="menu">
+        <div>
+            <h2>Menu</h2>
+            <a href="medicamentos">Fitoterápicos</a><br>
+            <a href="medicamentos">Homeopáticos</a><br>
+            <a href="farmacias">Farmácias</a><br>
+            <a href="#">Médicos</a>
+        </div>
+    </div>
+    <section>
+        <table>
+            </tr>
+        </table>
+    </section>
+    <article class="medicamento_info">
+        <tr th:each="medicamento : ${medicamentos}">
+            <br>
+            <br>
+            <a>ID Remédio: </a>
+            <td th:text=${medicamento.idmed}></td><br>
+            <br>
+            <a>Nome do medicamento: </a>
+            <td th:text=${medicamento.nome}></td><br>
+            <br>
+            <a>Nota: </a>
+            <td th:text=${medicamento.avaliacao}></td><br>
+            <br>
+            <a>Indicação para o remédio: </a>
+            <td th:text=${medicamento.indicacao}></td><br>
+            <br>
+            <a>Link para compra: </a>
+            <td th:text=${medicamento.urlimagem}></td><br>
+            
+    </article>
+
+
+    <footer>
+
+        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com as avaliações, porém não substitui a opinião médica.
+        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico. Desenvolvedores do site: Emanuela Lopez e Joel Ribeiro
+    </footer>
+
+
+</body>
+
+
+
+</html>
