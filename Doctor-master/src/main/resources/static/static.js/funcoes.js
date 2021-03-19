@@ -118,6 +118,11 @@ function Login() {
     var username = document.getElementById("uname").value;
     var password = document.getElementById("pwd").value;
 
+    if (username == "admin" && password == "admin"){
+        window.location = "http://localhost:8080/home";
+        done = 1;
+    }
+    /*
     if (username == "manu" && password == "123") {
         window.location = "http://localhost:8080/user/2";
         done = 1;
@@ -129,7 +134,7 @@ function Login() {
     if (username == "glauco" && password == "123") {
         window.location = "http://localhost:8080/user/201";
         done = 1;
-    }
+    }*/
     if (done == 0) { alert("Senha ou Usuário inválido." + document.getElementById("uname").value); }
 
 
