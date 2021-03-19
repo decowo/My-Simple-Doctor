@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/StyleSheet.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
+    <title>Login</title>
+    <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="container-global">
+            <div class="container-logo d-flex" style="box-shadow: 0 0 5px 0.005px gray; padding: 5px; justify-content: center; align-items: center;">
+                <img src="img/msd.png" height=75px></img>
+                <h1 style="font-size: 20px; font-weight: bold; margin-left: 10px;">My Simple Doctor</h1>
+            </div>
+            <!-- <p>Bem-vindo ao My Simple Doctor!
+                <br>Aqui você pode inserir seus sintomas e encontrar medicamentos que podem ser sua solução!
+            </p> -->
+            <aside>
+            </aside>
+            <form action="#" method="post" class="justify-content-center d-flex" style="margin-top: 35px;">
+                <div class="row container-login p-5">
+                    <div class="col-7 align-self-center" style="text-align: center;">
+                        <img src="img/vector.jpg" style="width: 100%;">
+                    </div>
+                    <div class="col-5 align-self-center">
+                        <div class="row d-flex flex-column text-center">
+                            <div class="col mb-3">
+                                <button id="google" type="button" class="btn btn-primary btn-sm btn-block" style="font-size: 16px; font-weight: bold;">Fazer login com o Google</button>
+                            </div>
+                            <div class="col mb-3">
+                                <button id="google" type="button" class="btn btn-primary btn-sm btn-block" style="font-size: 16px; font-weight: bold; background-color: #3b5998; border-color: #3b5998;">Fazer login com o Facebook</button>
+                            </div>
+                            <label style="color: gray;"><b>OU</b></label>
+                            <div class="col mb-3">
+                                <input type="text" placeholder="Usuário" id="uname" class="input-group" required>
+                            </div>
+                            <div class="col mb-3">
+                                <input type="password" placeholder="Senha" id="pwd" class="input-group" required>
+                            </div>
+                            <div class="col">
+                                <button id="login" type="button" class="btn btn-outline-primary" href="javascript:void(0)" onclick="Login()">Login</button>
+                            </div>
+                            <div class="col">
+                                <a href="usuarios">Crie uma conta</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer>
+            Este site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com as avaliações, porém não substitui a opinião médica. Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico.
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/styleuser.css" rel="stylesheet">
+
+<head>
+    <header><a href="http://localhost:8080/medicamentos">Home</a><a href="http://localhost:8080/login">Login</a><a href="http://localhost:8080/usuarios">Cadastro</a></header>
+    <title>My Simple Doctor</title>
+    <meta charset="utf-8">
+    <script src="funcoes.js"></script>
+
+    <img src="https://i.ibb.co/YywLC81/msd-1.png" height=150px width=150px></img>
+    <h1>My Simple Doctor</h1>
+
+
+</head>
+
+<body>
+    <div class="user_menu">
+        <div>
+            <h2>Menu</h2>
+            <a href="medicamentos">Meus remédios</a><br>
+            <a href="farmacias">Minhas farmácias</a><br>
+        </div>
+    </div>
+    <div class="user_menu2">
+        <div>
+            <h3>Usuário</h3>
+            <img src="https://i.ibb.co/Msh3bXY/User.png" alt="User" class="avataruser"></img>
+            <h3>Alergias</h3>
+
+        </div>
+    </div>
+
+    <article class="user_info">
+        <tr th:each="user: ${user}">
+            <br>
+            <a>Meu ID: </a>
+            <td th:text=${user.id}></td><br>
+            <br>
+            <br>
+            <a>Minha data de nascimento: </a>
+            <td th:text=${user.birth}></td><br>
+            <br>
+            <br>
+            <a>Meu email: </a>
+            <td th:text=${user.email}></td>
+            <br>
+            <br>
+            <br>
+            <a>Meu nome: </a>
+            <td th:text=${user.nome}></td><br>
+            <br>
+            <br>
+            <a>Meu username: </a>
+            <td th:text=${user.username}></td><br>
+            <br>
+            <br>
+            <a>Minhas alergias: </a>
+            <td th:text=${user.alergias}></td><br>
+            <br>
+            <br>
+            <a>Meu Estado: </a>
+            <td th:text=${user.estado}></td><br>
+            <br><br>
+    </article>
+    <br>
+    <br>
+    <footer>
+
+        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com as avaliações, porém não substitui a opinião médica.
+        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico. Desenvolvedores do site: Emanuela Lopez e Joel Ribeiro
+    </footer>
+
+
+</body>
+
+
+
+</html>

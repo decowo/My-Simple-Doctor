@@ -1,0 +1,43 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+:root {
+    --azul: #00B4D8;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: #00B4D8 !important;
+}
+
+.container-login {
+    height: 40%;
+    width: 60%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px 0.002px gray;
+}
+
+.container-login button {
+    letter-spacing: 0.75px;
+}
+
+.container-logo {
+    background-color: rgba(255, 255, 255, 95%);
+    width: 100vw;
+    height: 15vh;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 80%);;
+    font-family: Verdana;
+    font-size: 11px;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

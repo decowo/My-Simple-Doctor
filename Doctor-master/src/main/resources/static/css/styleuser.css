@@ -1,0 +1,340 @@
+h1 {
+    color: #66c2ff;
+    text-align: center;
+    font-family: verdana;
+    font-size: 40px;
+    margin-top: 5px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-family: verdana;
+    font-size: 24px;
+}
+
+p {
+    color: #777d78;
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+}
+
+header,
+header a {
+    color: white;
+    background-color: #66c2ff;
+    padding: 5px;
+    text-align: left;
+    font-family: verdana;
+    font-size: 20px;
+    height: 45px;
+    border-radius: 10px;
+}
+
+.menu,
+aside {
+    background-color: #66c2ff;
+    font-family: verdana;
+    color: white;
+    font-size: 18px;
+    width: 200px;
+    height: 1000px;
+    margin-top: 40px;
+    float: left;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.menu a,
+aside a {
+    color: white;
+    font-family: verdana;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 3;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.user_menu {
+    background-color: #66c2ff;
+    font-family: verdana;
+    color: white;
+    font-size: 18px;
+    width: 200px;
+    height: 700px;
+    margin-top: 40px;
+    float: right;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.user_menu a {
+    color: white;
+    text-align: left;
+    font-family: verdana;
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 3;
+    margin-left: 10px;
+}
+
+.user_menu2 {
+    background-color: transparent;
+    font-family: verdana;
+    color: #66c2ff;
+    font-size: 18px;
+    width: 200px;
+    height: 700px;
+    position: absolute;
+    left: 10px;
+    border-radius: 10px;
+    margin-top: 100px;
+    border: 2px solid #66c2ff;
+}
+
+.user_menu2 a {
+    color: #66c2ff;
+    text-align: left;
+    font-family: verdana;
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 3;
+    margin-left: 10px;
+}
+
+.user_menu2 h3 {
+    color: #66c2ff;
+    text-align: center;
+    font-family: verdana;
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+header a {
+    color: white;
+    text-align: left;
+    font-family: verdana;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 3;
+    margin-right: 10px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: #66c2ff;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+    bottom: 0px;
+
+}
+
+#divBusca {
+    background-color: #ffffff;
+    border: solid 2px #66c2ff;
+    border-radius: 10px;
+    width: 800px;
+    height: 38px;
+    margin-left: 300px;
+}
+
+#txtBusca,
+input:focus {
+    float: left;
+    color: #777d78;
+    background-color: transparent;
+    padding-left: 20px;
+    font-size: 24px;
+    border: none;
+    height: 38px;
+    width: 600px;
+    outline: none;
+}
+
+#btnBusca {
+    border: none;
+    float: right;
+    height: 38px;
+    border-radius: 7px 7px 7px 7px;
+    widows: 85px;
+    font-weight: bold;
+    background: #66c2ff;
+    font-family: verdana;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.med {
+    margin: 0px 10px 500px 10px;
+    float: left;
+    border: 3px solid #66c2ff;
+    border-radius: 30px;
+}
+
+img {
+    float: left;
+    margin: 10px 0px 0px 0px;
+}
+
+#avaliacao,
+.text {
+    float: left;
+    margin: 0px 0px 10px 0px;
+}
+
+.login input {
+    border: solid 2px #66c2ff;
+    border-radius: 7px;
+    width: 400px;
+    height: 40px;
+    font-family: verdana;
+    font-size: 20px;
+    margin: 10px 0px 10px 300px;
+    outline: none;
+}
+
+.login label {
+    color: #66c2ff;
+    font-size: 24px;
+    font-family: Verdana;
+    margin-left: 450px;
+}
+
+.login p {
+    color: #777d78;
+    font-family: verdana;
+    font-size: 24px;
+    margin-right: 120px;
+}
+
+.login button,
+.cadastro button {
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    font-family: verdana;
+    font-size: 20px;
+    margin: 10px 0px 10px 400px;
+    color: white;
+    background-color: #66c2ff;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* Avatar image */
+
+img.avatar {
+    width: 200px;
+    border-radius: 50%;
+    margin: 50px 300px 20px 400px;
+}
+
+.cadastro label {
+    color: #66c2ff;
+    font-size: 24px;
+    font-family: Verdana;
+    text-align: auto;
+    margin-left: 270px;
+    padding: 10px;
+}
+
+.cadastro input,
+.cadastro input:focus,
+.cadastro select {
+    border: solid 2px #66c2ff;
+    border-radius: 7px;
+    width: 500px;
+    height: 40px;
+    font-family: verdana;
+    font-size: 20px;
+    margin: 10px 0px 10px 270px;
+    color: #777d78;
+    outline: none;
+}
+
+.buscapharmacy button {
+    width: 100px;
+    height: 38px;
+    margin-left: 990px;
+    position: absolute;
+    top: 213px;
+    background-color: #66c2ff;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+    font-family: verdana;
+    cursor: pointer;
+}
+
+.state {
+    top: 213px;
+    margin-left: 905px;
+    position: absolute;
+}
+
+.state select {
+    background-color: #ffffff;
+    border: solid 2px #66c2ff;
+    border-radius: 10px;
+    width: 80px;
+    height: 38px;
+    font-size: 24px;
+    font-family: verdana;
+}
+
+.city {
+    background-color: #ffffff;
+    border: solid 2px #66c2ff;
+    border-radius: 10px;
+    width: 500px;
+    height: 38px;
+    margin-left: 400px;
+}
+
+.city input {
+    float: left;
+    background-color: transparent;
+    font-size: 24px;
+    border: none;
+    height: 38px;
+    width: 500px;
+}
+
+.avataruser {
+    float: center;
+    margin: 5px 0px 20px 50px;
+    width: 100px;
+    height: 100px;
+}
+
+.user_info {
+    border: 2px solid #66c2ff;
+    border-radius: 10px;
+    float: left;
+    margin: 100px 10px px 100px;
+    width: 800px;
+    height: auto;
+    color: #777d78;
+    font-size: 16px;
+    font-family: Verdana;
+
+}
+
+.user_info a{
+    color: #66c2ff;
+    font-size: 20px;
+    font-family: Verdana;
+    margin: 5px 0px 10px 10px;
+    font-weight: bold;
+}
+

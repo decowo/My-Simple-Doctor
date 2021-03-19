@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="css/style.css" rel="stylesheet">
+
+<head>
+    <header><a href="http://localhost:8080/medicamentos">Home</a><a href="http://localhost:8080/login">Login</a><a href="http://localhost:8080/usuarios">Cadastro</a></header>
+    <title>Cadastro</title>
+    <meta charset="utf-8">
+
+
+    <img src="https://i.ibb.co/YywLC81/msd-1.png" height=130px width=130px></img>
+    <h1>My Simple Doctor</h1>
+    <p>Bem-vindo ao My Simple Doctor!
+        <br>Aqui você pode inserir seus sintomas e encontrar medicamentos que podem ser sua solução!</p>
+
+</head>
+
+<body>
+    <aside>
+        <div>
+            <h2>Menu</h2>
+            <a href="medicamentos">Fitoterápicos</a><br>
+            <a href="medicamentos">Homeopáticos</a><br>
+            <a href="farmacias">Farmácias</a><br>
+        </div>
+    </aside>
+    <article>
+        <form th:action="@{/salvar}" class="cadastro" method="POST">
+            <div class="imgcontainer">
+                <img src="https://i.ibb.co/Msh3bXY/User.png" alt="User" class="avatar"></img>
+            </div><br>
+            <div class="container">
+                <label for="nome"><strong>Nome Completo</strong></label><br>
+                <input id="nome" type="text" placeholder="Insira o seu nome" name="nome" required><br>
+
+                <label for="birth"><strong>Data de nascimento</strong></label><br>
+                <input id="birth" style="color: #777d78" type="text" placeholder="dd/mm/aa" required><br>
+
+                <label for="genero"><strong>Gênero</strong></label><br>
+                <select name="genero" id="genero">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Não quero declarar">Não quero declarar</option>
+                </select>
+
+                <label for="alergias"><strong>Alergia</strong></label><br>
+                <input type="text" placeholder="" name="alergias" id="alergias" required><br>
+
+                <label for="email"><strong>Email</strong></label><br>
+                <input type="text" placeholder="exemplo@exemplo.com" name="email" id="email" required><br>
+
+                <label for="estado"><strong>Estado</strong></label><br>
+                <input type="text" placeholder="SP" name="estado" id="estado" required><br>
+
+                <label for="username"><strong>Usuário</strong></label><br>
+                <input type="text" placeholder="Insira o usuário" name="username" id="username" required><br>
+
+                <label for="password"><strong>Senha</strong></label><br>
+                <input type="password" placeholder="Insira a senha" name="password" id="password" required><br>
+
+                <button id="enviar" type="submit">Cadastrar</button>
+            </div><br>
+            <div class="container">
+                <button type="button" class="cancelbtn">Cancelar</button>
+            </div><br>
+        </form>
+        <table>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text=${usuario.id}></td>
+                <td th:text=${usuario.nome}></td>
+                <td th:text=${usuario.genero}></td>
+                <td th:text=${usuario.email}></td>
+                <td th:text=${usuario.birth}></td>
+                <td th:text=${usuario.alergias}></td>
+                <td th:text=${usuario.estado}></td>
+                <td th:text=${usuario.username}></td>
+                <td th:text=${usuario.password}></td>
+
+            </tr>
+        </table>
+    </article>
+    <footer>
+
+        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com as avaliações, porém não substitui a opinião médica.
+        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico. Desenvolvedores do site: Emanuela Lopez e Joel Ribeiro
+    </footer>
+
+
+</body>
+
+
+
+</html>

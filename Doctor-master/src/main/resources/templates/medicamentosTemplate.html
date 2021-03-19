@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/StyleSheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <title>My Simple Doctor</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home" style="font-weight: bold;">
+                    <!-- <img src="img/msd.png" alt="" width="40" height="40" class="d-inline-block align-top"> -->
+                    MSD
+                </a>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+                            <div class="navbar-nav">
+                                <a class="nav-link" aria-current="page" href="#">Home</a>
+                                <a class="nav-link" href="medicamentos">Remédios</a>
+                                <a class="nav-link" href="farmacias">Farmácias</a>
+                                <a class="nav-link" href="#">Médicos</a>
+                                <a class="nav-link" href="login">Sair</a>
+                            </div>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    <script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
+    <form id="divBusca2" class="d-flex justify-content-center mt-4">
+        <div class="input-group" style="width: 95vw;">
+            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                <option value="" selected>Selecione o sintoma</option>
+                <option value="Analgésico">Dor</option>
+                <option value="Anti diabético">Diabetes</option>
+                <option value="Relaxante muscular">Dor muscular</option>
+                <option value="Dimuinição do colesterol">Colesterol alto</option>
+                <option value="Redução da pressão">Pressão alta</option>
+                <option value="Ansiedade">Ansiedade</option>
+                <option value="Tiroide">Tiroide</option>
+                <option value="Trombose">Trombose</option>
+                <option value="Sobrepeso">Sobrepeso</option>
+                <option value="Vitamina D">Vitamina D</option>
+            </select>
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" href="javascript:void(0)"
+                    onclick="Buscar()">Buscar</button>
+            </div>
+    </form>
+    </div>
+    <div class="d-flex justify-content-center mt-2" style="width: 100%;">
+        <div class="table-remedy text-center"
+            style="height: 62vh; width: 95vw; overflow-y: scroll; background-color: white; box-shadow: 0 0 5px 0.002px gray;">
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">MEDICAMENTO</th>
+                    <th scope="col">NOTA</th>
+                    <th scope="col">INDICAÇÃO</th>
+                    <th scope="col">LINK</th>
+                </thead>
+                <tbody>
+                    <tr>
+                    <tr th:each="medicamento : ${medicamentos}">
+                        <th scope="row" th:text=${medicamento.idmed}></th>
+                        <td th:text=${medicamento.nome}></td>
+                        <td th:text=${medicamento.avaliacao}></td>
+                        <td th:text=${medicamento.indicacao}></td>
+                        <td th:text=${medicamento.urlimagem}></td>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <article class="medicamento_info">
+    </article>
+    <footer>
+        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com
+        as avaliações, porém não substitui a opinião médica.
+        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico.
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
