@@ -13,7 +13,6 @@ import javax.persistence.Table;
 public class Medicamento implements Serializable{
 
     private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idmed;
@@ -25,7 +24,7 @@ public class Medicamento implements Serializable{
     public static long getSerialversionuid() {
         return serialVersionUID;
     }
-    
+
     public int getIdmed() {
         return idmed;
     }
@@ -74,5 +73,5 @@ public class Medicamento implements Serializable{
         IDAnvisa = iDAnvisa;
     }
 
-    
+
 }

@@ -14,14 +14,17 @@ import javax.persistence.Table;
 @Table(name="TB_RatingFarm")
 public class RatingsFarm {
     private static final long serialVersionUID = 1L;
-   @Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Farmacia idFarm_2;
     private float RatingFarm;
     private int idFarmnota; //saber qual idfarm vai receber a nota
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private Usuario iduser; //fk
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "farm_id", referencedColumnName = "idfarm")
+    private Farmacia IDFarm_fk;
     public static long getSerialversionuid() {
         return serialVersionUID;
     }
