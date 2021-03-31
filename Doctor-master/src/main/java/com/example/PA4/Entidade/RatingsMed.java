@@ -15,19 +15,19 @@ public class RatingsMed {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idmed_2_pk;
-    private float Rating;
+    private int idmed_2_pk; // pk da entity
+    private float Rating;//nota de 0 a 5
     private int idmednota; //saber qual idmed vai receber a nota
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private Usuario iduser; //fk
+    private Usuario iduser; //fk pra saber quem deu a nota
 
 
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idmed", referencedColumnName = "idmed")
-    private Medicamento idmed_2_fk;//fk
+    private Medicamento idmed_2_fk;//fk ligada ao medicamento
 
 
 

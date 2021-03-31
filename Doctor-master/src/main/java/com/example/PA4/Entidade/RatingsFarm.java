@@ -16,7 +16,7 @@ public class RatingsFarm {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Farmacia idFarm_2;
+    private int idFarm_2;
     private float RatingFarm;
     private int idFarmnota; //saber qual idfarm vai receber a nota
     @OneToOne(cascade = CascadeType.ALL)
@@ -28,10 +28,10 @@ public class RatingsFarm {
     public static long getSerialversionuid() {
         return serialVersionUID;
     }
-    public Farmacia getIdFarm_2() {
+    public int getIdFarm_2() {
         return idFarm_2;
     }
-    public void setIdFarm_2(Farmacia idFarm_2) {
+    public void setIdFarm_2(int idFarm_2) {
         this.idFarm_2 = idFarm_2;
     }
     public float getRatingFarm() {
