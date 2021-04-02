@@ -16,84 +16,83 @@
 </head>
 
 <body>
-    <div id="container">
-        <header>
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid d-flex" style="width: 80%">
-                    <a class="navbar-brand" href="home" style="font-weight: bold; padding-left: 8px;">
-                        MySimpleDoctor
-                    </a>
-                    <nav class="navbar navbar-expand-lg p-0">
-                        <div class="container-fluid p-0" style="background: none;">
-                            <div class="navbar-nav">
-                                <a class="nav-link" href="medicamentos">Remédios</a>
-                                <a class="nav-link" href="farmacias">Farmácias</a>
-                                <a class="nav-link" href="#">Médicos</a>
-                                <a class="nav-link" href="login">Sair</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </nav>
-        </header>
-        <div class="more-info d-flex justify-content-center">
-            <div>
-                <p>Ferramentas relacionadas ao seu bem estar</p>
-                <button id="btn-mais" type="button" onclick="document.location.href='#cards'">Mais</button>
-            </div>
-        </div>
-        <section class="banner"></section>
-        <script>
-            window.addEventListener("scroll", function () {
-                var header = document.querySelector("header");
-                header.classList.toggle("sticky", window.scrollY > 0)
-            })
-        </script>
-        <div class="box-principal d-flex justify-content-center">
-            <div class="box-welcome d-flex flex-column align-items-center">
-                <p>Sinta-se à vontade!</p>
-                <p>Explore nossas ferramentas.</p>
-            </div>
-        </div>
-        <section id="cards">
-            <div class="d-flex justify-content-center align-items-center" style="height: 100vh; width: 100%; margin-top: 100px;">
-                <div class="row">
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="img/pills.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">REMÉDIOS</h5>
-                                <p class="card-text">Encotre remedios adequados para seu sintoma</p>
-                                <a href="medicamentos" class="btn-block btn-card">Acessar</a>
-                            </div>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid d-flex" style="width: 80%">
+                <a class="navbar-brand" href="home" style="font-weight: bold; padding-left: 8px;">
+                    MySimpleDoctor
+                </a>
+                <nav class="navbar navbar-expand-lg p-0">
+                    <div class="container-fluid p-0" style="background: none;">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="medicamentos">Remédios</a>
+                            <a class="nav-link" href="farmacias">Farmácias</a>
+                            <a class="nav-link" href="#">Médicos</a>
+                            <a class="nav-link" href="login">Sair</a>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="img/pharmacy.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">FARMÁCIAS</h5>
-                                <p class="card-text">Encontre farmácias cadastradas perto de você</p>
-                                <a href="farmacias" class="btn-block btn-card">Acessar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="img/medic.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">MÉDICOS</h5>
-                                <p class="card-text">Encontre médicos cadastrados perto de você</p>
-                                <a href="#" class="btn-block btn-card">Acessar</a>
-                            </div>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    <div class="more-info d-flex justify-content-center">
+        <div>
+            <p>Ferramentas relacionadas ao seu bem estar</p>
+            <button id="btn-mais" type="button" onclick="document.location.href='#cards'">Mais</button>
+        </div>
+    </div>
+    <section class="banner"></section>
+    <script>
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+    </script>
+    <div class="box-principal d-flex justify-content-center">
+        <div class="box-welcome d-flex flex-column align-items-center">
+            <p>Sinta-se à vontade!</p>
+            <p>Explore nossas ferramentas.</p>
+        </div>
+    </div>
+    <section id="cards">
+        <div class="d-flex justify-content-center align-items-center"
+            style="height: 100vh; width: 100%; margin-top: 100px;">
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/pills.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">REMÉDIOS</h5>
+                            <p class="card-text">Encotre remedios adequados para seu sintoma</p>
+                            <a href="medicamentos" class="btn-block btn-card">Acessar</a>
                         </div>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/pharmacy.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">FARMÁCIAS</h5>
+                            <p class="card-text">Encontre farmácias cadastradas perto de você</p>
+                            <a href="farmacias" class="btn-block btn-card">Acessar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/medic.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">MÉDICOS</h5>
+                            <p class="card-text">Encontre médicos cadastrados perto de você</p>
+                            <a href="#" class="btn-block btn-card">Acessar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-        <div class="rotulo d-flex"
-            style="background-color: rgb(94, 94, 94); height: 200px; justify-content: center; align-items: center; padding: 10px; color: white">
-
+        </div>
+    </section>
+    <footer>
+        <div class="rotulo d-flex">
             <div class="d-flex justify-content-between">
                 <div class="row" style="width: 1100px; height: 140px;">
                     <div class="col text-center">
@@ -126,7 +125,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

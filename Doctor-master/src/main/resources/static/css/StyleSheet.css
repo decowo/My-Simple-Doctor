@@ -158,6 +158,16 @@ header.sticky .container-fluid a {
     border-radius: 17px;
 }
 
+.rotulo {
+    background-color: rgb(43, 43, 43);
+    height: 200px; 
+    justify-content: center; 
+    align-items: 
+    center; 
+    padding: 10px; 
+    color: white
+}
+
 .rotulo p {
     cursor: pointer;
 }
