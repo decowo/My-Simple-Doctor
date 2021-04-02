@@ -13,87 +13,117 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="home" style="font-weight: bold;">
-                    <!-- <img src="img/msd.png" alt="" width="40" height="40" class="d-inline-block align-top"> -->
-                    MySimpleDoctor
-                </a>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-                        <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-                            <div class="navbar-nav">
-                                <a class="nav-link" aria-current="page" href="#">Home</a>
-                                <a class="nav-link" href="medicamentos">Remédios</a>
-                                <a class="nav-link" href="farmacias">Farmácias</a>
-                                <a class="nav-link" href="#">Médicos</a>
-                                <a class="nav-link" href="login">Sair</a>
-                            </div>
+    <nav class="navbar navbar-expand-lg" style="background: #fff; height: 60px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home" style="font-weight: bold; color: black;">
+                MySimpleDoctor
+            </a>
+            <nav class="navbar navbar-expand-lg" style="background: none;">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+                        <div class="navbar-nav navbar-nav-black">
+                            <a class="nav-link" aria-current="page" href="home" style="color: black;">Home</a>
+                            <a class="nav-link" href="medicamentos" style="color: black;">Remédios</a>
+                            <a class="nav-link" href="farmacias" style="color: black;">Farmácias</a>
+                            <a class="nav-link" href="#" style="color: black;">Médicos</a>
+                            <a class="nav-link" href="login" style="color: black;">Sair</a>
                         </div>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
                     </div>
-                </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </nav>
+    <div class="container-dados d-flex flex-column justify-content-center text-center" style="height: 95vh;">
+        <p style="color: #fff; font-size: x-large; font-weight: bold;">Aqui você pode encontrar medicamentos para o seu
+            sintoma!</p>
+        <script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
+        <form id="divBusca2" class="d-flex justify-content-center">
+            <div class="input-group" style="width: 95vw;">
+                <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                    <option value="" selected>Selecione o sintoma</option>
+                    <option value="Analgésico">Dor</option>
+                    <option value="Anti diabético">Diabetes</option>
+                    <option value="Relaxante muscular">Dor muscular</option>
+                    <option value="Dimuinição do colesterol">Colesterol alto</option>
+                    <option value="Redução da pressão">Pressão alta</option>
+                    <option value="Ansiedade">Ansiedade</option>
+                    <option value="Tiroide">Tiroide</option>
+                    <option value="Trombose">Trombose</option>
+                    <option value="Sobrepeso">Sobrepeso</option>
+                    <option value="Vitamina D">Vitamina D</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button" href="javascript:void(0)"
+                        onclick="Buscar()">Buscar</button>
+                </div>
             </div>
-        </nav>
-    </header>
-    <script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
-    <form id="divBusca2" class="d-flex justify-content-center mt-4">
-        <div class="input-group" style="width: 95vw;">
-            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                <option value="" selected>Selecione o sintoma</option>
-                <option value="Analgésico">Dor</option>
-                <option value="Anti diabético">Diabetes</option>
-                <option value="Relaxante muscular">Dor muscular</option>
-                <option value="Dimuinição do colesterol">Colesterol alto</option>
-                <option value="Redução da pressão">Pressão alta</option>
-                <option value="Ansiedade">Ansiedade</option>
-                <option value="Tiroide">Tiroide</option>
-                <option value="Trombose">Trombose</option>
-                <option value="Sobrepeso">Sobrepeso</option>
-                <option value="Vitamina D">Vitamina D</option>
-            </select>
-            <div class="input-group-append">
-                <button class="btn btn-secondary" type="button" href="javascript:void(0)"
-                    onclick="Buscar()">Buscar</button>
+        </form>
+        <div class="d-flex justify-content-center mt-2" style="width: 100%;">
+            <div class="table-remedy text-center"
+                style="height: 62vh; width: 95vw; overflow-y: scroll; background-color: white; box-shadow: 0 0 5px 0.002px gray;">
+                <table class="table table-hover">
+                    <thead>
+                        <th scope="col">#</th>
+                        <th scope="col">MEDICAMENTO</th>
+                        <th scope="col">NOTA</th>
+                        <th scope="col">INDICAÇÃO</th>
+                        <th scope="col">LINK</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <tr th:each="medicamento : ${medicamentos}">
+                            <th scope="row" th:text=${medicamento.idmed}></th>
+                            <td th:text=${medicamento.nome}></td>
+                            <!--<td th:text=${medicamento.avaliacao}></td>-->
+                            <td th:text=${medicamento.indicacao}></td>
+                            <td th:text=${medicamento.urlimagem}></td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-    </form>
-    </div>
-    <div class="d-flex justify-content-center mt-2" style="width: 100%;">
-        <div class="table-remedy text-center"
-            style="height: 62vh; width: 95vw; overflow-y: scroll; background-color: white; box-shadow: 0 0 5px 0.002px gray;">
-            <table class="table table-hover">
-                <thead>
-                    <th scope="col">#</th>
-                    <th scope="col">MEDICAMENTO</th>
-                    <th scope="col">NOTA</th>
-                    <th scope="col">INDICAÇÃO</th>
-                    <th scope="col">LINK</th>
-                </thead>
-                <tbody>
-                    <tr>
-                    <tr th:each="medicamento : ${medicamentos}">
-                        <th scope="row" th:text=${medicamento.idmed}></th>
-                        <td th:text=${medicamento.nome}></td>
-                        <!--<td th:text=${medicamento.avaliacao}></td>-->
-                        <td th:text=${medicamento.indicacao}></td>
-                        <td th:text=${medicamento.urlimagem}></td>
-                    </tr>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
-    <article class="medicamento_info">
-    </article>
     <footer>
-        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com
-        as avaliações, porém não substitui a opinião médica.
-        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico.
+        <div class="rotulo d-flex"
+            style="background-color: rgb(94, 94, 94); height: 200px; justify-content: center; align-items: center; padding: 10px; color: white">
+            <div class="d-flex justify-content-between">
+                <div class="row" style="width: 1100px; height: 140px;">
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">MySimpleDoctor</p>
+                        <p>App para desktop</p>
+                        <p>Dispositivos móveis</p>
+                        <p>Planos do MDS</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Produtos</p>
+                        <p>Plano plus</p>
+                        <p>Plano family</p>
+                        <p>Professional</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Empresa</p>
+                        <p>Quem somos</p>
+                        <p>Trabalhe conosco</p>
+                        <p>Investidores</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Atendimento</p>
+                        <p>Central de ajuda</p>
+                        <p>Fale conosco</p>
+                        <p>Cookies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

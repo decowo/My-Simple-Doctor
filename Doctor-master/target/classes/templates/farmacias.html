@@ -1,105 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<link href="/css/style.css" rel="stylesheet"/>
-<script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
 
 <head>
-    <header><a href="medicamentos">Home</a><a href="login">Login</a><a href="usuarios">Cadastro</a></header>
-    <title>Farmácias</title>
-    <meta charset="utf-8">
-    <link th:href="@{/css/style.css}" rel="stylesheet"/>
-    <script src="funcoes.js"></script>
-
-    <img src="https://i.ibb.co/YywLC81/msd-1.png" height=130px width=130px></img>
-    <h1>My Simple Doctor</h1>
-    <p>
-        <br>Aqui você pode encontrar as farmácias mais próximas de você!</p>
-
-    <div class="buscapharmacy">
-
-        <div class="city">
-            <input type="text" id="txtBusca" placeholder="Insira sua cidade" />
-        </div>
-
-        <div class="state">
-            <select name="state" id="state" placeholder="Estado">
-                <option value="AC">AC</option>
-                <option value="AL">AL</option>
-                <option value="AP">AP</option>
-                <option value="AM">AM</option>
-                <option value="BA">BA</option>
-                <option value="CE">CE</option>
-                <option value="ES">ES</option>
-                <option value="GO">GO</option>
-                <option value="MA">MA</option>
-                <option value="MT">MT</option>
-                <option value="MS">MS</option>
-                <option value="MG">MG</option>
-                <option value="PA">PA</option>
-                <option value="PB">PB</option>
-                <option value="PR">PR</option>
-                <option value="PE">PE</option>
-                <option value="PI">PI</option>
-                <option value="RJ">RJ</option>
-                <option value="RN">RN</option>
-                <option value="RS">RS</option>
-                <option value="RO">RO</option>
-                <option value="RR">RR</option>
-                <option value="SC">SC</option>
-                <option value="SP">SP</option>
-                <option value="SE">SE</option>
-                <option value="TO">TO</option>
-                <option value="DF">DF</option>
-
-
-            </select>
-        </div>
-
-        <button id="search" href="javascript:void(0)" onclick="Buscarf()">Buscar</button>
-
-    </div>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/StyleSheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <title>My Simple Doctor</title>
 </head>
 
 <body>
-    <div class="menu">
-        <div>
-            <h2>Menu</h2>
-            <a href="localhost:8080/medicamentos">Fitoterápicos</a><br>
-            <a href="localhost:8080/medicamentos">Homeopáticos</a><br>
-            <a href="farmacias">Farmácias</a><br>
-            <a href="#">Médicos</a>
+    <nav class="navbar navbar-expand-lg" style="background: #fff; height: 60px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home" style="font-weight: bold; color: black;">
+                MySimpleDoctor
+            </a>
+            <nav class="navbar navbar-expand-lg" style="background: none;">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+                        <div class="navbar-nav navbar-nav-black">
+                            <a class="nav-link" aria-current="page" href="home" style="color: black;">Home</a>
+                            <a class="nav-link" href="medicamentos" style="color: black;">Remédios</a>
+                            <a class="nav-link" href="farmacias" style="color: black;">Farmácias</a>
+                            <a class="nav-link" href="#" style="color: black;">Médicos</a>
+                            <a class="nav-link" href="login" style="color: black;">Sair</a>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </nav>
+    <div class="container-dados d-flex flex-column justify-content-center text-center" style="height: 95vh;">
+        <p style="color: #fff; font-size: x-large; font-weight: bold;">Aqui você pode encontrar as farmácias mais próximas de você!</p>
+        <script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
+        <form id="divBusca2" class="d-flex flex-row justify-content-center">
+            <div class="input-group" style="width: 5vw">
+                <select class="custom-select" id="inputGroupSelect04">
+                    <option value="" selected>UF</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                    <option value="DF">DF</option>
+                </select>
+            </div>
+            <div class="input-group" style="width: 90vw">
+                <select class="custom-select" id="inputGroupSelect04">
+                    <option value="" selected>Selecione a cidade</option>
+                    <option>Cidades...</option>
+                </select>
+                <!-- <div class="city">
+                <input type="text" id="txtBusca" placeholder="Insira sua cidade" />
+            </div> -->
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button" href="javascript:void(0)"
+                        onclick="Buscar()">Buscar</button>
+                </div>
+            </div>
+        </form>
+        <div class="d-flex justify-content-center mt-2" style="width: 100%;">
+            <div class="table-remedy text-center"
+                style="height: 62vh; width: 95vw; overflow-y: scroll; background-color: white; box-shadow: 0 0 5px 0.002px gray;">
+                <table class="table table-hover">
+                    <thead>
+                        <th scope="col">#</th>
+                        <th scope="col">DESCRIÇÃO</th>
+                        <th scope="col">ESTADO</th>
+                        <th scope="col">LOCALIZAÇÃO</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <tr th:each="farmacias: ${farmacias}">
+                            <th scope="row" th:text=${farmacias.idfarm}></th>
+                            <td th:text=${farmacias.descricao}></td>
+                            <!--<td th:text=${medicamento.avaliacao}></td>-->
+                            <td th:text=${farmacias.estado}></td>
+                            <td th:text=${farmacias.localizacao}></td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    <section>
-        <article class="farmacias_info">
-            <br>
-            <tr th:each="farmacias: ${farmacias}">
-                <br>
-                <a>ID Farmacia: </a>
-                <td th:text=${farmacias.idfarm}></td><br>
-                <br>
-                <a>Descrição da farmacia: </a>
-                <td th:text=${farmacias.descricao}></td><br>
-                <br>
-                <a>Estado: </a>
-                <td th:text=${farmacias.estado}></td><br>
-                <br>
-                <a>Localizacao: </a>
-                <td th:text=${farmacias.localizacao}></td><br><br>
-            </tr>
-        </article>
-    </section>
-
     <footer>
+        <div class="rotulo d-flex"
+            style="background-color: rgb(94, 94, 94); height: 200px; justify-content: center; align-items: center; padding: 10px; color: white">
+            <div class="d-flex justify-content-between">
+                <div class="row" style="width: 1100px; height: 140px;">
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">MySimpleDoctor</p>
+                        <p>App para desktop</p>
+                        <p>Dispositivos móveis</p>
+                        <p>Planos do MDS</p>
+                    </div>
 
-        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com as avaliações, porém não substitui a opinião médica.
-        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico. Desenvolvedores do site: Emanuela Lopez e Joel Ribeiro
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Produtos</p>
+                        <p>Plano plus</p>
+                        <p>Plano family</p>
+                        <p>Professional</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Empresa</p>
+                        <p>Quem somos</p>
+                        <p>Trabalhe conosco</p>
+                        <p>Investidores</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Atendimento</p>
+                        <p>Central de ajuda</p>
+                        <p>Fale conosco</p>
+                        <p>Cookies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
-
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
-
-
 
 </html>

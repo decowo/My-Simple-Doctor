@@ -10,9 +10,110 @@
 }
 
 body {
-    height: 400px;
+    height: 100vh;
     width: 100vw;
     background: #56A4FF !important;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+header a {
+    position: relative;
+    letter-spacing: 1px;
+    transition: 0.6s;
+    color: #fff;
+}
+
+header.sticky {
+    background: #fff;
+    color: black;
+    box-shadow: 0 1px 5px black;
+}
+
+.banner {
+    width: 100%;
+    height: 80vh;
+    background: rgba(0,0,0,0.5) url(../img/background-pill.jpg);
+    background-blend-mode:darken ;
+    box-shadow: inset 0 75px 40px rgba(0, 0, 0, 0.89);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header.sticky .container-fluid a {
+    color: black;
+}
+
+.more-info {
+    width: 100vw;
+    position: absolute;
+    top: 175px;
+}
+
+.more-info p {
+    font-size: xx-large;
+    color: #fff;
+}
+
+#btn-mais {
+    transition: 0.6s;
+    outline: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 45px;
+    background: #488ad4;
+    border-radius: 50px;
+    font-size: x-large;
+    letter-spacing: 2px;
+}
+
+#btn-mais:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background: #2e6cb4;
+    transition: 0.6s;
+    box-shadow: 0 0 0px 3px #fff;
+}
+
+.btn-card {
+    text-align: center;
+    color: #fff;
+    font-size: large;
+    letter-spacing: 2px;
+    background: #0075FF;
+    padding: 5px 30px;
+    border-radius: 2px;
+}
+
+.btn-card:hover {
+    color: #fff;
+    text-decoration: none;
+    background: #005cc5;
 }
 
 .container-login {
@@ -33,36 +134,23 @@ body {
     height: 15vh;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 80%);;
-    font-family: Verdana;
-    font-size: 11px;
-    margin: 0;
+.nav-link:hover {
+    color: rgb(220, 220, 220);
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.box-principal{
+    width: 100vw;
     position: absolute;
-    width: 100%;
-    bottom: 0;
-}
-
-.container-fluid{
-
-    padding: 0;
-    background: rgba(0,0,0,0.5) url(../img/background-pill.jpg);
-    background-blend-mode:darken ;
-}
-
-#container a{
-    color: white;
-}
-
-.navbar-nav a:hover {
-    color: rgb(165, 165, 165) !important;
+    top: 400px;
 }
 
 .box-welcome{
-    width: 40%;
-    height: 250px;
+    width: 70%;
+    height: 200px;
     display: flex;
     justify-content: center;
     background-color: white;
@@ -70,12 +158,47 @@ footer {
     border-radius: 17px;
 }
 
-.box-principal{
-    width: 100%;
-    position: absolute;
-    top: 375px;
-}
-
 .rotulo p {
     cursor: pointer;
+}
+
+.navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.navbar-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navbar-nav-black a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: rgb(24, 24, 24);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navbar-nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
 }

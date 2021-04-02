@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="/css/style.css" rel="stylesheet"/>
+<script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
+
+<head>
+    <header><a href="medicamentos">Home</a><a href="login">Login</a><a href="usuarios">Cadastro</a></header>
+    <title>Farmácias</title>
+    <meta charset="utf-8">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <script src="funcoes.js"></script>
+
+    <img src="https://i.ibb.co/YywLC81/msd-1.png" height=130px width=130px></img>
+    <h1>My Simple Doctor</h1>
+    <p>
+        <br>Aqui você pode encontrar as farmácias mais próximas de você!</p>
+
+    <div class="buscapharmacy">
+
+        <div class="city">
+            <input type="text" id="txtBusca" placeholder="Insira sua cidade" />
+        </div>
+
+        <div class="state">
+            <select name="state" id="state" placeholder="Estado">
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+                <option value="DF">DF</option>
+
+
+            </select>
+        </div>
+
+        <button id="search" href="javascript:void(0)" onclick="Buscarf()">Buscar</button>
+
+    </div>
+
+</head>
+
+<body>
+    <div class="menu">
+        <div>
+            <h2>Menu</h2>
+            <a href="localhost:8080/medicamentos">Fitoterápicos</a><br>
+            <a href="localhost:8080/medicamentos">Homeopáticos</a><br>
+            <a href="farmacias">Farmácias</a><br>
+            <a href="#">Médicos</a>
+        </div>
+    </div>
+    <section>
+        <article class="farmacias_info">
+            <br>
+            <tr th:each="farmacias: ${farmacias}">
+                <br>
+                <a>ID Farmacia: </a>
+                <td th:text=${farmacias.idfarm}></td><br>
+                <br>
+                <a>Descrição da farmacia: </a>
+                <td th:text=${farmacias.descricao}></td><br>
+                <br>
+                <a>Estado: </a>
+                <td th:text=${farmacias.estado}></td><br>
+                <br>
+                <a>Localizacao: </a>
+                <td th:text=${farmacias.localizacao}></td><br><br>
+            </tr>
+        </article>
+    </section>
+
+    <footer>
+
+        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com as avaliações, porém não substitui a opinião médica.
+        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico. Desenvolvedores do site: Emanuela Lopez e Joel Ribeiro
+    </footer>
+
+
+</body>
+
+
+
+</html>
