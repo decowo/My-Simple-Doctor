@@ -44,7 +44,7 @@
         <script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
         <form id="divBusca2" class="d-flex justify-content-center">
             <div class="input-group" style="width: 95vw;">
-                <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                <select class="custom-select" id="indicacao" aria-label="Example select with button addon">
                     <option value="" selected>Selecione o sintoma</option>
                     <option value="Analgésico">Dor</option>
                     <option value="Anti diabético">Diabetes</option>
@@ -58,8 +58,9 @@
                     <option value="Vitamina D">Vitamina D</option>
                 </select>
                 <div class="input-group-append">
-                    <button class="btn btn-secondary" type="button" href="javascript:void(0)"
-                        onclick="Buscar()">Buscar</button>
+                    <button class="btn btn-secondary" href="javascript:void(0)" onclick="Buscar()" type="submit" id="btnBusca" >Buscar</button>
+
+                       <!-- <button  href="javascript:void(0)" onclick="Buscar()" type="submit" id="btnBusca">Buscar</button> -->
                 </div>
             </div>
         </form>
