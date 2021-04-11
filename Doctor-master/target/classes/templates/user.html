@@ -32,8 +32,8 @@
           }
         }
 
-        .d-flex flex-column p-3 bg-light{
-            background-color: white;
+        ul li:hover a{
+            text-decoration: underline;
         }
 
     </style>
@@ -48,21 +48,23 @@
           </a>
       
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Medicamentos</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Farmácias</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Médicos</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Sobre</a></li>
+            <li><a href="home" class="nav-link px-2 link-dark" style="color: gray;">Home</a></li>
+            <li><a href="medicamentos" class="nav-link px-2 link-dark" style="color: gray;">Medicamentos</a></li>
+            <li><a href="farmacias" class="nav-link px-2 link-dark" style="color: gray;">Farmácias</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark" style="color: gray;">Médicos</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark" style="color: gray;">Sobre</a></li>
           </ul>
       
           <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sair</button>
+            <button type="button" class="btn btn-outline-primary me-2">Log out</button>
           </div>
         </header>
     </div>
     <div class="d-flex flex-column p-3 bg-white" style="width: 20%; height: 100%;  border-radius: 10px;">
-        <hr style="background-color: white ;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <img src="https://i.ibb.co/M1CYzk8/Design-sem-nome.png" height="40" weight="60" alt="My simple doctor" style="margin-left: 10px;">
+        </a>
+        <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
             <a href="#" class="nav-link active">
@@ -71,25 +73,25 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a href="#" class="nav-link link-dark" style="color: gray;">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
               Meus medicamentos
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a href="#" class="nav-link link-dark" style="color: gray;">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
               Meus médicos
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a href="#" class="nav-link link-dark" style="color: gray;">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
               Meu calendário
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a href="#" class="nav-link link-dark" style="color: gray;">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
               Contraindicações
             </a>
@@ -99,34 +101,64 @@
       </div>
 
       <div class="my-3 p-3 bg-body rounded shadow-sm" style="margin-left: 21%; position: relative; bottom: 102%; margin-right: 8%; height: 100%; border-radius: 10px;">
-        <h6 class="border-bottom pb-2 mb-0">Recent updates</h6>
+        <h2 style="text-align: center; color: #66c2ff; font-weight: bold;">Meus dados</h2>
+        <table class="table">
+            <tr th:each="user: ${user}">
+                <th style="color: gray;" scope="row">ID</th>
+                <td th:text=${user.id}></td>                 
+            </tr>
+            <tr th:each="user: ${user}">
+                <th style="color: gray;" scope="row">Data de nascimento</th>
+                <td th:text=${user.birth}></td>
+            </tr>
+            <tr th:each="user: ${user}"> 
+                <th  style="color: gray;" scope="row">Email</th>
+                <td th:text=${user.email}></td>
+            </tr>
+            <tr th:each="user: ${user}">
+                <th  style="color: gray;" scope="row">Nome</th>
+                <td th:text=${user.nome}></td>
+            </tr>
+            <tr th:each="user: ${user}">
+                <th style="color: gray;" scope="row">Nome de usuário</th>
+                <td th:text=${user.username}></td>
+            </tr>
+            <tr th:each="user: ${user}">
+                <th style="color: gray;" scope="row">Alergias</th>
+                <td th:text=${user.alergias}></td>
+            </tr>  
+            <tr th:each="user: ${user}"> 
+                <th style="color: gray;" scope="row">Estado</th>
+                <td th:text=${user.estado}></td>
+            </tr>
+        </table>
+        <br>
+        <h4 class="border-bottom pb-2 mb-0" style="text-align: center; color: #66c2ff; font-weight: bold;">Notícias</h4>
         <div class="d-flex text-muted pt-3">
           <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
     
           <p class="pb-3 mb-0 small lh-sm border-bottom">
-            <strong class="d-block text-gray-dark">@username</strong>
-            Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
+            <strong class="d-block text-gray-dark">Dorflex</strong>
+            O medicamento que você procurava chegou em uma das farmácias próximas de você! Saiba mais...
           </p>
         </div>
         <div class="d-flex text-muted pt-3">
-          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"/><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
-    
-          <p class="pb-3 mb-0 small lh-sm border-bottom">
-            <strong class="d-block text-gray-dark">@username</strong>
-            Some more representative placeholder content, related to this other user. Another status update, perhaps.
-          </p>
-        </div>
-        <div class="d-flex text-muted pt-3">
-          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"/><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
-    
-          <p class="pb-3 mb-0 small lh-sm border-bottom">
-            <strong class="d-block text-gray-dark">@username</strong>
-            This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
-          </p>
-        </div>
-        <small class="d-block text-end mt-3">
-          <a href="#">All updates</a>
-        </small>
+            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      
+            <p class="pb-3 mb-0 small lh-sm border-bottom">
+              <strong class="d-block text-gray-dark">Pague Menos</strong>
+              A Rede Pague Menos está com promoções em alguns dos seus medicamentos favoritos!
+              Saiba mais...
+            </p>
+          </div>
+          <div class="d-flex text-muted pt-3">
+            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      
+            <p class="pb-3 mb-0 small lh-sm border-bottom">
+              <strong class="d-block text-gray-dark">Drogasil</strong>
+              Agora você tem uma Drogasil perto de sua casa! Saiba mais...
+            </p>
+          </div>
       </div>
 
     <!-- <article class="user_info">
