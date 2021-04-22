@@ -119,7 +119,7 @@ function Login() {
     var password = document.getElementById("pwd").value;
 
     if (username == "admin" && password == "admin"){
-        window.location = "http://localhost:8080/home";
+        window.location = "http://localhost:8080";
         done = 1;
     }
     /*
