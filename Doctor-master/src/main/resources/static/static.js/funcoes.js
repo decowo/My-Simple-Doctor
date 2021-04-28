@@ -157,3 +157,19 @@ function Buscarf() {
     window.open(url + input, "_blank");
 
 }
+
+function LoginTent() {
+    var done = 0;
+    var username = document.getElementById("uname").value;
+    var password = document.getElementById("pwd").value;
+
+    if (username == null || password == null){
+        alert("Senha ou Usuário inválido." + document.getElementById("uname").value);
+    }
+
+    if (username == "admin" || password == "admin"){
+        alert("Log Admin");
+        var url = "http://localhost:8080/";
+        window.open(url, "_blank");
+    }
+}
