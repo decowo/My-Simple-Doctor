@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/StyleSheet.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Página principal</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid d-flex" style="width: 80%">
+                <a class="navbar-brand" href="http://localhost:8080/" style="font-weight: bold; padding-left: 8px;">
+                    MySimpleDoctor
+                </a>
+                <nav class="navbar navbar-expand-lg p-0">
+                    <div class="container-fluid p-0" style="background: none;">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="medicamentos">Remédios</a>
+                            <a class="nav-link" href="farmacias">Farmácias</a>
+                            <a class="nav-link" href="#">Médicos</a>
+                            <a class="nav-link" href="login">Entrar</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    <div class="more-info d-flex justify-content-center">
+        <div>
+            <p>Ferramentas relacionadas ao seu bem estar</p>
+            <button id="btn-mais" type="button" onclick="document.location.href='#cards'">Mais</button>
+        </div>
+    </div>
+    <section class="banner"></section>
+    <script>
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+    </script>
+    <div class="box-principal d-flex justify-content-center">
+        <div class="box-welcome d-flex flex-column align-items-center">
+            <p>Sinta-se à vontade!</p>
+            <p>Explore nossas ferramentas.</p>
+        </div>
+    </div>
+    <section id="cards">
+        <div class="d-flex justify-content-center align-items-center"
+            style="height: 100vh; width: 100%; margin-top: 100px;">
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/pills.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">REMÉDIOS</h5>
+                            <p class="card-text">Encotre remedios adequados para seu sintoma</p>
+                            <a href="medicamentos" class="btn-block btn-card">Acessar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/pharmacy.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">FARMÁCIAS</h5>
+                            <p class="card-text">Encontre farmácias cadastradas perto de você</p>
+                            <a href="farmacias" class="btn-block btn-card">Acessar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/medic.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">MÉDICOS</h5>
+                            <p class="card-text">Encontre médicos cadastrados perto de você</p>
+                            <a href="#" class="btn-block btn-card">Acessar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="rotulo d-flex">
+            <div class="d-flex justify-content-between">
+                <div class="row" style="width: 1100px; height: 140px;">
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">MySimpleDoctor</p>
+                        <p>App para desktop</p>
+                        <p>Dispositivos móveis</p>
+                        <p>Planos do MDS</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Produtos</p>
+                        <p>Plano plus</p>
+                        <p>Plano family</p>
+                        <p>Professional</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Empresa</p>
+                        <p>Quem somos</p>
+                        <p>Trabalhe conosco</p>
+                        <p>Investidores</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <p style="font-weight: bold; font-size: 20px;">Atendimento</p>
+                        <p>Central de ajuda</p>
+                        <p>Fale conosco</p>
+                        <p>Cookies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

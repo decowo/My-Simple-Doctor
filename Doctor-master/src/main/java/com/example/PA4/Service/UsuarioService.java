@@ -33,4 +33,9 @@ public class UsuarioService {
         return repository.findById(Id).get();
     }
 
+    public Usuario getuserbyusername(String username)
+    {
+        return repository.findByUsername(username).get();
+    }
+
 }

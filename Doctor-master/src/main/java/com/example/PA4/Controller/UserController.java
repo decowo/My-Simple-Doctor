@@ -24,4 +24,12 @@ public class UserController {
         mv.addObject("user", servico.getuserbyid(Id));
         return mv;
     }
+
+    @GetMapping("/username/{username}")
+    public ModelAndView getbyusername(@PathVariable(name = "username") String username) {
+        ModelAndView mv = new ModelAndView("user");
+        //Usuario user = servico.getuserbyid(Id);
+        mv.addObject("user", servico.getuserbyusername(username));
+        return mv;
+    }
 }

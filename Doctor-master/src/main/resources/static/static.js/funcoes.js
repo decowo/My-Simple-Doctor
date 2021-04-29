@@ -172,4 +172,13 @@ function LoginTent() {
         var url = "http://localhost:8080/";
         window.open(url, "_blank");
     }
+
+    if (username !=null && password !=null)
+    {
+     alert("Verificando");
+     var input = document.getElementById("uname").value;
+     var url = "http://localhost:8080/username/";
+     var link = url + input;
+     window.open(link,"_blank");
+    }
 }
