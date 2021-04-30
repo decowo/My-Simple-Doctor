@@ -26,4 +26,9 @@ public class FarmService {
 	
 		return repository.findAllByEstado(estado);
 	}
+    @Transactional
+	public List<Farmacia> buscarPorEstadoCidade(String estado, String cidade) {
+	
+		return repository.findAllByEstadoCidade(estado,cidade);
+	}
 }

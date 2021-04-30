@@ -14,4 +14,8 @@ public interface FarmRepository extends JpaRepository <Farmacia, Integer> {
 
     @Query("select estado from Farmacia estado where estado.estado like :local")
 	public List<Farmacia> findAllByEstado(@Param("local") String local);
+
+   // @Query("select estado, localizacao from Farmacia estado where estado.estado like :estado and estado.localizacao like :cidade")
+    @Query("SELECT f FROM Farmacia f WHERE f.estado = :estado and f.localizacao = :cidade")
+	public List<Farmacia> findAllByEstadoCidade(@Param ("estado") String estado, @Param ("cidade") String cidade);
 }

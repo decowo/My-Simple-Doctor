@@ -32,4 +32,12 @@ public class FarmController {
         return mv;
     }
 
+    @GetMapping("/farmacias/{Estado}/{Cidade}")
+    public ModelAndView getbyEstadoCidade(@PathVariable(name = "Estado") String Estado, @PathVariable(name = "Cidade") String cidade) {
+        ModelAndView mv = new ModelAndView("farmacias");
+        List<Farmacia> far = servico.buscarPorEstadoCidade(Estado,cidade);
+        mv.addObject("farmacias", far);
+        return mv;
+    }
+
 }
