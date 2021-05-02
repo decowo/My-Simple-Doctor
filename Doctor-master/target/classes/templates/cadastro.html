@@ -1,91 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<link href="css/style.css" rel="stylesheet">
+
 
 <head>
-    <header><a href="http://localhost:8080/medicamentos">Home</a><a href="http://localhost:8080/login">Login</a><a href="http://localhost:8080/usuarios">Cadastro</a></header>
     <title>Cadastro</title>
     <meta charset="utf-8">
 
-
-    <img src="https://i.ibb.co/YywLC81/msd-1.png" height=130px width=130px></img>
-    <h1>My Simple Doctor</h1>
-    <p>Bem-vindo ao My Simple Doctor!
-        <br>Aqui você pode inserir seus sintomas e encontrar medicamentos que podem ser sua solução!</p>
-
+    <link href="/css/StyleSheet.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 
 <body>
-    <aside>
-        <div>
-            <h2>Menu</h2>
-            <a href="medicamentos">Fitoterápicos</a><br>
-            <a href="medicamentos">Homeopáticos</a><br>
-            <a href="farmacias">Farmácias</a><br>
-        </div>
-    </aside>
-    <article>
+    <div class="container" style="background-color: white; border-radius: 10px; position: relative; width: 100%;">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="position: static;">
+          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="https://i.ibb.co/YywLC81/msd-1.png" height="60" width="60"></img>
+          </a>
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="margin-right: 30%;">
+            <li><a href="http://localhost:8080/" class="nav-link px-2 link-dark" style="color: gray;">Home</a></li>
+            <li><a href="http://localhost:8080/medicamentos" class="nav-link px-2 link-dark" style="color: gray;">Medicamentos</a></li>
+            <li><a href="http://localhost:8080/farmacias" class="nav-link px-2 link-dark" style="color: gray;">Farmácias</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark" style="color: gray;">Médicos</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark" style="color: gray;">Sobre</a></li>
+          </ul>
+        </header>
+    </div>
+    <div class="container" style="background-color: white; border-radius: 10px; position: relative; width: 50%">
         <form th:action="@{/salvar}" class="cadastro" method="POST">
-            <div class="imgcontainer">
-                <img src="https://i.ibb.co/Msh3bXY/User.png" alt="User" class="avatar"></img>
-            </div><br>
-            <div class="container">
-                <label for="nome"><strong>Nome Completo</strong></label><br>
-                <input id="nome" type="text" placeholder="Insira o seu nome" name="nome" required><br>
+            <div class="container"><br>
+                <label for="nome"class="form-label" style="color:#777d78"><strong>Nome Completo</strong></label><br>
+                <input id="nome" class="form-control" type="text" placeholder="Insira o seu nome" name="nome" required><br>
 
-                <label for="birth"><strong>Data de nascimento</strong></label><br>
-                <input id="birth" style="color: #777d78" type="text" placeholder="dd/mm/aa" required><br>
+                <label for="birth" class="form-label" style="color:#777d78"><strong>Data de nascimento</strong></label><br>
+                <input id="birth" class="form-control" style="color: #777d78" type="text" placeholder="dd/mm/aa" required><br>
 
-                <label for="genero"><strong>Gênero</strong></label><br>
-                <select name="genero" id="genero">
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Não quero declarar">Não quero declarar</option>
-                </select>
+                <label for="genero" class="form-label" style="color:#777d78"><strong>Gênero</strong></label>
+                <select name="genero" id="genero" class="form-select" aria-placeholder="Escolha uma opção" style="color:#777d78">
+                    <option value="Masculino" style="color:#777d78">Masculino</option>
+                    <option value="Feminino" style="color:#777d78">Feminino</option>
+                    <option value="Não quero declarar" style="color:#777d78">Não quero declarar</option>
+                </select><br>
+                <label for="alergias" class="form-label" style="color:#777d78"><strong>Alergia</strong></label><br>
+                <input type="text" class="form-control" placeholder="Ácaros; Cloridrato de Sertralina; Amendoim"name="alergias" id="alergias" required><br>
 
-                <label for="alergias"><strong>Alergia</strong></label><br>
-                <input type="text" placeholder="" name="alergias" id="alergias" required><br>
+                <label for="email" class="form-label" style="color:#777d78"><strong>Email</strong></label><br>
+                <input type="text" class="form-control" placeholder="exemplo@exemplo.com" name="email" id="email" required><br>
 
-                <label for="email"><strong>Email</strong></label><br>
-                <input type="text" placeholder="exemplo@exemplo.com" name="email" id="email" required><br>
+                <label for="estado" class="form-label" style="color:#777d78"><strong>Estado</strong></label><br>
+                <input type="text" class="form-control" placeholder="SP" name="estado" id="estado" required><br>
 
-                <label for="estado"><strong>Estado</strong></label><br>
-                <input type="text" placeholder="SP" name="estado" id="estado" required><br>
+                <label for="username" class="form-label" style="color:#777d78"><strong>Usuário</strong></label><br>
+                <input type="text" class="form-control" placeholder="Insira o usuário" name="username" id="username" required><br>
 
-                <label for="username"><strong>Usuário</strong></label><br>
-                <input type="text" placeholder="Insira o usuário" name="username" id="username" required><br>
+                <label for="password" class="form-label"style="color:#777d78" ><strong>Senha</strong></label><br>
+                <input type="password" class="form-control" placeholder="Insira a senha" name="password" id="password" required><br>
 
-                <label for="password"><strong>Senha</strong></label><br>
-                <input type="password" placeholder="Insira a senha" name="password" id="password" required><br>
-
-                <button id="enviar" type="submit">Cadastrar</button>
-            </div><br>
-            <div class="container">
-                <button type="button" class="cancelbtn">Cancelar</button>
-            </div><br>
+                <button id="enviar" class="btn btn-primary" type="submit">Cadastrar</button>
+                <button type="button" class="btn btn-primary">Cancelar</button><br><br>
         </form>
-        <table>
-            <tr th:each="usuario : ${usuarios}">
-                <td th:text=${usuario.id}></td>
-                <td th:text=${usuario.nome}></td>
-                <td th:text=${usuario.genero}></td>
-                <td th:text=${usuario.email}></td>
-                <td th:text=${usuario.birth}></td>
-                <td th:text=${usuario.alergias}></td>
-                <td th:text=${usuario.estado}></td>
-                <td th:text=${usuario.username}></td>
-                <td th:text=${usuario.password}></td>
-
-            </tr>
-        </table>
-    </article>
-    <footer>
-
-        Nosso site é um projeto sem fins lucrativos que visa indicar um tratamento positivo dos sintomas de acordo com as avaliações, porém não substitui a opinião médica.
-        <br>Não nos responsabilizamos por nenhum efeito colateral. Se os sintomas persistirem, procure um médico. Desenvolvedores do site: Emanuela Lopez e Joel Ribeiro
-    </footer>
-
-
+    </div><br>
 </body>
 
 

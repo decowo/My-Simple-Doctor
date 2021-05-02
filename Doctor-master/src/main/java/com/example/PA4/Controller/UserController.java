@@ -17,13 +17,6 @@ public class UserController {
         mv.addObject("user", servico.getUsers());
         return mv;
     }
-    @GetMapping("/user/{Id}")
-    public ModelAndView getbyid(@PathVariable(name = "Id") Integer Id) {
-        ModelAndView mv = new ModelAndView("user");
-        //Usuario user = servico.getuserbyid(Id);
-        mv.addObject("user", servico.getuserbyid(Id));
-        return mv;
-    }
 
     @GetMapping("/username/{username}")
     public ModelAndView getbyusername(@PathVariable(name = "username") String username) {

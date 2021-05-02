@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class UsuarioController {
+public class CadastroController {
     
     @Autowired
     private UsuarioService servico;
 
 
-    @GetMapping("/usuarios")
+    @GetMapping("/cadastro")
     public ModelAndView getUsuarios()
     {
-        ModelAndView mv = new ModelAndView("usuariosTemplate");
+        ModelAndView mv = new ModelAndView("cadastro");
         mv.addObject("usuarios", servico.getUsuarios());
         return mv;
     }
@@ -29,6 +29,6 @@ public class UsuarioController {
     public String salvar(@ModelAttribute Usuario usuario)
     {
         servico.salvar(usuario);
-        return "redirect:/usuarios";
+        return "redirect:/cadastro";
     }
 }
