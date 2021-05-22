@@ -16,6 +16,7 @@ public class Medicamento implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idmed;
+    private Float notaMed;
     private String urlimagem;
     private String nome;
     private String indicacao;
@@ -72,6 +73,12 @@ public class Medicamento implements Serializable{
     public void setIDAnvisa(String iDAnvisa) {
         IDAnvisa = iDAnvisa;
     }
+    public Float getNotaMed() {
+        return notaMed;
+    }
 
+    public void setNotaMed(Float notaMed) {
+        this.notaMed = notaMed;
+    }
 
 }
