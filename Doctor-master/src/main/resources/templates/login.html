@@ -20,7 +20,7 @@
             </div>
             <aside>
             </aside>
-            <form action="#" method="post" class="justify-content-center d-flex" style="margin-top: 35px;">
+            <form class="justify-content-center d-flex" style="margin-top: 35px;">
                 <div class="row container-login p-5">
                     <div class="col-7 align-self-center" style="text-align: center;">
                         <img src="img/vector.jpg" style="width: 100%;">
@@ -41,10 +41,13 @@
                                 <input type="password" placeholder="Senha" id="pwd" class="form-control" required>
                             </div>
                             <div class="col">
-                                <button id="login" type="submit" href="user" class="btn btn-outline-primary" onclick="LoginTent()">Login</button>
+                                <button id="login" href="#" type="submit" class="btn btn-outline-primary" onclick="LoginTent(0)">Login</button>
                             </div>
                             <div class="col">
-                                <a href="usuarios">Crie uma conta</a>
+                                <a href="#">Crie uma conta</a>
+                            </div>
+                            <div class="col">
+                                <a style="font-size: x-small;" onclick="LoginTent(1)" href="#">Entrar como convidado</a>
                             </div>
                         </div>
                     </div>

@@ -118,23 +118,19 @@ function Login() {
     var username = document.getElementById("uname").value;
     var password = document.getElementById("pwd").value;
 
+    if (username == "matheus" && password == "admin"){
+        window.location = "http://localhost:8080";
+        windows.alert("Bem vindo Matheus")
+        done = 1;
+    }
+
     if (username == "admin" && password == "admin"){
         window.location = "http://localhost:8080";
+        windows.alert("Bem vindo admin")
         done = 1;
     }
-    /*
-    if (username == "manu" && password == "123") {
-        window.location = "http://localhost:8080/user/2";
-        done = 1;
-    }
-    if (username == "joel" && password == "123") {
-        window.location = "http://localhost:8080/user/1";
-        done = 1;
-    }
-    if (username == "glauco" && password == "123") {
-        window.location = "http://localhost:8080/user/201";
-        done = 1;
-    }*/
+
+
     if (done == 0) { alert("Senha ou Usuário inválido." + document.getElementById("uname").value); }
 
 
@@ -158,27 +154,17 @@ function Buscarf() {
 
 }
 
-function LoginTent() {
+function LoginTent(convidado) {
     var done = 0;
     var username = document.getElementById("uname").value;
     var password = document.getElementById("pwd").value;
 
-    if (username == null || password == null){
-        alert("Senha ou Usuário inválido." + document.getElementById("uname").value);
-    }
-
-    if (username == "admin" || password == "admin"){
-        alert("Log Admin");
+    if (username === "admin" || password === "admin" || convidado===1){
         var url = "http://localhost:8080/";
         window.open(url, "_blank");
     }
 
-    if (username !=null && password !=null)
-    {
-     alert("Verificando");
-     var input = document.getElementById("uname").value;
-     var url = "http://localhost:8080/username/";
-     var link = url + input;
-     window.open(link,"_blank");
+    else {
+        alert("usuario ou senha incorreto!");
     }
 }

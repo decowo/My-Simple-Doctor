@@ -25,7 +25,7 @@
                             <a class="nav-link" aria-current="page" href="http://localhost:8080/" style="color: black;">Home</a>
                             <a class="nav-link" href="medicamentos" style="color: black;">Remédios</a>
                             <a class="nav-link" href="farmacias" style="color: black;">Farmácias</a>
-                            <a class="nav-link" href="#" style="color: black;">Médicos</a>
+                            <!-- <a class="nav-link" href="#" style="color: black;">Médicos</a> -->
                             <a class="nav-link" href="login" style="color: black;">Sair</a>
                         </div>
                     </div>
@@ -42,9 +42,9 @@
         <p style="color: #fff; font-size: x-large; font-weight: bold;">Aqui você pode encontrar as farmácias mais
             próximas de você!</p>
         <script type="text/javascript" th:src="@{/static.js/funcoes.js}"></script>
-        <form id="divBusca2" class="d-flex flex-row justify-content-center">
-            <div class="input-group" style="width: 5vw">
-                <select class="custom-select" id="inputGroupSelect04">
+        <form id="divBusca2" class="d-flex justify-content-center">
+            <div class="input-group" style="width: 95vw">
+                <select class="custom-select" id="state">
                     <option value="" selected>UF</option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
@@ -74,18 +74,10 @@
                     <option value="TO">TO</option>
                     <option value="DF">DF</option>
                 </select>
-            </div>
-            <div class="input-group" style="width: 90vw">
-                <select class="custom-select" id="inputGroupSelect04">
-                    <option value="" selected>Selecione a cidade</option>
-                    <option>Cidades...</option>
-                </select>
-                <!-- <div class="city">
-                <input type="text" id="txtBusca" placeholder="Insira sua cidade" />
-            </div> -->
+
                 <div class="input-group-append">
                     <button class="btn btn-secondary" type="button" href="javascript:void(0)"
-                        onclick="Buscar()">Buscar</button>
+                        onclick="Buscarf()">Buscar</button>
                 </div>
             </div>
         </form>
